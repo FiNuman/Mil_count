@@ -1,0 +1,1281 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package binary.search;
+import java.util.Scanner;
+import java.io.File;
+import java.io.Writer;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.Reader;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+/**
+ *
+ * @author finum
+ */
+public class BinarySearch {
+
+    public static int []aiz(int []a){
+        for (int i = 0; i < a.length; i++) {
+            a[i]=0;
+        }
+    return a;
+}
+    public static int b(int []a){
+        int mill=0;
+        for (int i = 0; i < a.length; i++) {
+                        if(a[i]==100)
+                        {a[i]=0;}
+                        else {
+                            mill=mill+a[i];
+                            a[i]=0;
+                        }
+                    }
+        return mill;
+    }
+    public static void print(int []a){
+        for (int i = 0; i <a.length; i++) {
+            if(a[i]!=100){
+                if(i==a.length-1){
+                    System.out.print(a[i]);
+                }else
+                System.out.print(a[i]+" + ");
+            }else
+                if(i==a.length-1){
+                    System.out.print(0);
+                }else
+                    System.out.print(0+" + ");
+        }
+    }
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Check or Submission money for    1");
+        System.out.println("Check or add Market for----------2");
+        System.out.println("Chekc milrate                    3");
+        System.out.println("Check Total calculation----------4");
+        System.out.println("Mil Counter                      5");
+        System.out.println("Reset all------------------------6\n\n");
+        char ch=sc.next().charAt(0);
+        
+                 /*  name  */
+        String abc1="Numan";
+        String abc2="Salman";
+        String abc3="Sunny";
+        String abc4="Rajib";
+        
+                 /*  Add money file  */
+                 /*  make sure this all file are in the same link   */
+                 
+        File n=new File("E:\\mill\\Am\\Numan.txt");   //10
+        File s=new File("E:\\mill\\Am\\Salman.txt");  //10
+        File b=new File("E:\\mill\\Am\\Sunny.txt");   //10
+        File t=new File("E:\\mill\\Am\\Tofayel.txt"); //10
+        
+                 
+                 /*     Market      */
+                  
+        File nm=new File("E:\\mill\\Mk\\NumanMrket.txt");     //30
+        File sm=new File("E:\\mill\\Mk\\SalmanMarket.txt");   //30
+        File bm=new File("E:\\mill\\Mk\\SunnyMarket.txt");    //30
+        File tm=new File("E:\\mill\\Mk\\TofayelMarket.txt");  //30
+        
+        
+                 /*    Mill Count Area   */
+        File nmc=new File("E:\\mill\\millcount\\numan.txt");     //31
+        File smc=new File("E:\\mill\\millcount\\salman.txt");    //31
+        File bmc=new File("E:\\mill\\millcount\\sunny.txt");     //31
+        File tmc=new File("E:\\mill\\millcount\\tofayel.txt");   //31
+        
+        
+        switch (ch){
+            case'1':
+            {
+                System.out.println("check money for 1");
+                System.out.println("Submission money for 2");
+                char c=sc.next().charAt(0);
+                
+                int a[]=new int[10];
+                        int total=0;
+                switch(c){
+                    case'1':
+                    {
+                        try{
+                            
+                               /*    NUMAN    */
+                               
+                            System.out.print(abc1+" ");
+                            String z;
+                            FileReader fr=new FileReader(n);
+                            BufferedReader br=new BufferedReader(fr);
+                            for (int i = 0; i < a.length; i++) {
+                                z=br.readLine();
+                                a[i]=Integer.parseInt(z);
+                                System.out.print(a[i]+",  ");
+                                total=total+a[i];
+                            }
+                            System.out.print("   Total is "+total+"\n");
+                            
+                            
+                            
+                               /*     SALMAN     */
+                            
+                            total=0;
+                            System.out.print(abc2+" ");
+                            FileReader frr=new FileReader(s);
+                            BufferedReader brr=new BufferedReader(frr);
+                            for (int i = 0; i < a.length; i++) {
+                                z=brr.readLine();
+                                a[i]=Integer.parseInt(z);
+                                System.out.print(a[i]+",  ");
+                                total=total+a[i];
+                            }
+                            System.out.print("   Total is "+total+"\n");
+                            
+                            
+                            
+                                /*      Sunny      */
+                                
+                            total=0;
+                            System.out.print(abc3+" ");
+                            FileReader frrr=new FileReader(b);
+                            BufferedReader brrr=new BufferedReader(frrr);
+                            for (int i = 0; i < a.length; i++) {
+                                z=brrr.readLine();
+                                a[i]=Integer.parseInt(z);
+                                System.out.print(a[i]+",  ");
+                                total=total+a[i];
+                            }
+                            System.out.print("   Total is "+total+"\n");
+                            
+                            
+                            
+                            
+                                /*      Tofayel    */
+                                
+                            total=0;
+                            System.out.print(abc4+" ");
+                            FileReader ffrrr=new FileReader(t);
+                            BufferedReader bbrrr=new BufferedReader(ffrrr);
+                            for (int i = 0; i < a.length; i++) {
+                                z=bbrrr.readLine();
+                                a[i]=Integer.parseInt(z);
+                                System.out.print(a[i]+",  ");
+                                total=total+a[i];
+                            }
+                            System.out.print("   Total is "+total+"\n");
+                            
+                            br.close();
+                            brr.close();
+                            brrr.close();
+                            bbrrr.close();
+                        }catch(IOException ex){
+                            System.out.print(ex);
+                        }
+                        
+                        break;
+                    }
+                    case '2':
+                    {
+                        System.out.println(abc1+" add-------1");
+                        System.out.println(abc2+" add------2");
+                        System.out.println(abc3+" add-------3");
+                        System.out.println(abc4+" add-----4");
+                        
+                        System.out.println("please select any one by(1,2,3,4)");
+                        char add=sc.next().charAt(0);
+                        switch(add){
+                            case '1':
+                            {
+                                
+                                
+                                  /*    Submission File one   */
+                                
+                                try{
+                                    System.out.println("\n Old Balance is ");
+                                    String z;
+                                    FileReader fr=new FileReader(n);
+                                    BufferedReader br=new BufferedReader(fr);
+                                    for (int i = 0; i < a.length; i++) {
+                                        z=br.readLine();
+                                        a[i]=Integer.parseInt(z);
+                                        System.out.print(a[i]+", ");
+                                        br.close();
+                                    }
+                                }catch(IOException ex){
+                                    System.out.print(ex);
+                                }
+                                System.out.print("\n How mouch money are you want to add =");
+                                for (int i = 0; i < a.length; i++) {
+                                    if(a[i]==0)
+                                    {
+                                        a[i]=sc.nextInt();
+                                        break;
+                                    }
+                                }
+                                
+                                System.out.println("\n new Balance is");
+                                try{
+                                    FileWriter fw=new FileWriter(n);
+                                    BufferedWriter bw=new BufferedWriter(fw);
+                                    for (int i = 0; i <a.length; i++) {
+                                        bw.write(a[i]+"\n");
+                                        System.out.print(a[i]+", ");
+                                    }
+                                    bw.close();
+                                }catch(IOException ex){
+                                   System.out.print(ex);
+                                }
+                                break;
+                            }
+                            case '2':
+                            {
+                                
+                                
+                                      /*    Submission File 2    */
+                                try{
+                                    System.out.println("\n Old Balance is ");
+                                    String z;
+                                    FileReader fr=new FileReader(s);
+                                    BufferedReader br=new BufferedReader(fr);
+                                    for (int i = 0; i < a.length; i++) {
+                                        z=br.readLine();
+                                        a[i]=Integer.parseInt(z);
+                                        System.out.print(a[i]+", ");
+                                    }
+                                }catch(IOException ex){
+                                    System.out.print(ex);
+                                }
+                                System.out.print("\n How mouch money are you want to add =");
+                                for (int i = 0; i < a.length; i++) {
+                                    if(a[i]==0)
+                                    {
+                                        a[i]=sc.nextInt();
+                                        break;
+                                    }
+                                }
+                                
+                                System.out.println("\n new Balance is");
+                                try{
+                                    FileWriter fw=new FileWriter(s);
+                                    BufferedWriter bw=new BufferedWriter(fw);
+                                    for (int i = 0; i <a.length; i++) {
+                                        bw.write(a[i]+"\n");
+                                        System.out.print(a[i]+", ");
+                                    }
+                                    bw.close();
+                                }catch(IOException ex){
+                                     System.out.print(ex);
+                                }
+                                break;
+                            }
+                            
+                                            // Submission File 3
+                            case '3':
+                            {
+                                try{
+                                    System.out.println("\n Old Balance is ");
+                                    String z;
+                                    FileReader fr=new FileReader(b);
+                                    BufferedReader br=new BufferedReader(fr);
+                                    for (int i = 0; i < a.length; i++) {
+                                        z=br.readLine();
+                                        a[i]=Integer.parseInt(z);
+                                        System.out.print(a[i]+", ");
+                                    }
+                                }catch(IOException ex){
+                                    System.out.print(ex);
+                                }
+                                System.out.print("\n How mouch money are you want to add =");
+                                for (int i = 0; i < a.length; i++) {
+                                    if(a[i]==0)
+                                    {
+                                        a[i]=sc.nextInt();
+                                        break;
+                                    }
+                                }
+                                
+                                System.out.println("\n new Balance is");
+                                try{
+                                    FileWriter fw=new FileWriter(b);
+                                    BufferedWriter bw=new BufferedWriter(fw);
+                                    for (int i = 0; i <a.length; i++) {
+                                        bw.write(a[i]+"\n");
+                                        System.out.print(a[i]+", ");
+                                    }
+                                    bw.close();
+                                }catch(IOException ex){
+                                   System.out.print(ex);
+                                }
+                                break;
+                            }
+                                           //Submission file 4
+                            case'4':
+                            {
+                                try{
+                                    System.out.println("\n Old Balance is ");
+                                    String z;
+                                    FileReader fr=new FileReader(t);
+                                    BufferedReader br=new BufferedReader(fr);
+                                    for (int i = 0; i < a.length; i++) {
+                                        z=br.readLine();
+                                        a[i]=Integer.parseInt(z);
+                                        System.out.print(a[i]+", ");
+                                    }
+                                }catch(IOException ex){
+                                    System.out.print(ex);
+                                }
+                                System.out.print("\n How mouch money are you want to add =");
+                                for (int i = 0; i < a.length; i++) {
+                                    if(a[i]==0)
+                                    {
+                                        a[i]=sc.nextInt();
+                                        break;
+                                    }
+                                }
+                                
+                                
+                                System.out.println("\n new Balance is");
+                                try{
+                                    FileWriter fw=new FileWriter(t);
+                                    BufferedWriter bw=new BufferedWriter(fw);
+                                    for (int i = 0; i <a.length; i++) {
+                                        bw.write(a[i]+"\n");
+                                        System.out.print(a[i]+", ");
+                                    }
+                                    bw.close();
+                                }catch(IOException ex){
+                                   System.out.print(ex);
+                                }
+                                break;
+                            }
+                            default:
+                            {
+                                System.out.println("Invalid key press");
+                            }
+                        }
+                        break;
+                    }
+                    default:
+                    {
+                        System.out.println("Invalid key press");
+                    }
+                }
+                break;
+            }
+            
+                    /*     Market areya     */
+            
+            case'2':
+            {
+                System.out.println("\n");
+                System.out.println(abc1+" market      1");
+                System.out.println(abc2+" market     2");
+                System.out.println(abc3+" market      3");
+                System.out.println(abc4+" market    4");
+                System.out.println("All calculation   5\n\n");
+                
+                char c=sc.next().charAt(0);
+                switch(c){
+                    case'1':
+                    {
+                        System.out.println("Old Market calculation");
+                        int a[]=new int [30];
+                        String z;
+                        try{
+                            FileReader fr=new FileReader(nm);
+                            BufferedReader br=new BufferedReader(fr);
+                            for (int i = 0; i < a.length ; i++) {
+                            z=br.readLine();
+                            a[i]=Integer.parseInt(z);
+                            System.out.print(a[i]+", ");
+                            }
+                        br.close();
+                        }catch(IOException ex){
+                        
+                        }
+                        System.out.println("\nHow much money did you market..?");
+                        for (int i = 0; i < a.length; i++) {
+                            if(a[i]==0){
+                                a[i]=sc.nextInt();
+                                break;
+                            }
+                        }
+                        System.out.println("new List");
+                        try{
+                            FileWriter fw=new FileWriter(nm);
+                            BufferedWriter bw=new BufferedWriter(fw);
+                            for (int i = 0; i < a.length ; i++) {
+                            System.out.print(a[i]+", ");
+                            bw.write(a[i]+"\n");
+                        }
+                            bw.close();
+                        }catch(IOException ex){
+                            System.out.print(ex);
+                        }
+                        break;
+                    }
+                    case'2':
+                    {
+                        System.out.println("Old Market calculation");
+                        int a[]=new int [30];
+                        String z;
+                        try{
+                            FileReader fr=new FileReader(sm);
+                            BufferedReader br=new BufferedReader(fr);
+                            for (int i = 0; i < a.length ; i++) {
+                            z=br.readLine();
+                            a[i]=Integer.parseInt(z);
+                            System.out.print(a[i]+", ");
+                            }
+                        br.close();
+                        }catch(IOException ex){
+                             System.out.print(ex);
+                        }
+                        System.out.println("\nHow much money did you market..?");
+                        for (int i = 0; i < a.length; i++) {
+                            if(a[i]==0){
+                                a[i]=sc.nextInt();
+                                break;
+                            }
+                        }
+                        System.out.println("new List");
+                        try{
+                            FileWriter fw=new FileWriter(sm);
+                            BufferedWriter bw=new BufferedWriter(fw);
+                            for (int i = 0; i < a.length ; i++) {
+                            System.out.print(a[i]+", ");
+                            bw.write(a[i]+"\n");
+                        }
+                            bw.close();
+                           }catch(IOException ex){
+                               System.out.print(ex);
+                            }
+                        break;
+                    }
+                    
+                    
+                    case'3':
+                    {
+                        System.out.println("Old Market calculation");
+                        int a[]=new int [30];
+                        String z;
+                        try{
+                            FileReader fr=new FileReader(bm);
+                            BufferedReader br=new BufferedReader(fr);
+                            for (int i = 0; i < a.length ; i++) {
+                            z=br.readLine();
+                            a[i]=Integer.parseInt(z);
+                            System.out.print(a[i]+", ");
+                            }
+                        br.close();
+                        }catch(IOException ex){
+                             System.out.print(ex);
+                        }
+                        System.out.println("\nHow much money did you market..?");
+                        for (int i = 0; i < a.length; i++) {
+                            if(a[i]==0){
+                                a[i]=sc.nextInt();
+                                break;
+                            }
+                        }
+                        System.out.println("new List");
+                        try{
+                            FileWriter fw=new FileWriter(bm);
+                            BufferedWriter bw=new BufferedWriter(fw);
+                            for (int i = 0; i < a.length ; i++) {
+                            System.out.print(a[i]+", ");
+                            bw.write(a[i]+"\n");
+                        }
+                            bw.close();
+                           }catch(IOException ex){
+                               System.out.print(ex);
+                            }
+                        break;
+                    }
+                    case'4':
+                    {
+                        System.out.println("Old Market calculation");
+                        int a[]=new int [30];
+                        String z;
+                        try{
+                            FileReader fr=new FileReader(tm);
+                            BufferedReader br=new BufferedReader(fr);
+                            for (int i = 0; i < a.length ; i++) {
+                            z=br.readLine();
+                            a[i]=Integer.parseInt(z);
+                            System.out.print(a[i]+", ");
+                            }
+                        br.close();
+                        }catch(IOException ex){
+                             System.out.print(ex);
+                        }
+                        System.out.println("\nHow much money did you market..?");
+                        for (int i = 0; i < a.length; i++) {
+                            if(a[i]==0){
+                                a[i]=sc.nextInt();
+                                break;
+                            }
+                        }
+                        System.out.println("new List");
+                        try{
+                            FileWriter fw=new FileWriter(tm);
+                            BufferedWriter bw=new BufferedWriter(fw);
+                            for (int i = 0; i < a.length ; i++) {
+                            System.out.print(a[i]+", ");
+                            bw.write(a[i]+"\n");
+                        }
+                            bw.close();
+                           }catch(IOException ex){
+                               System.out.print(ex);
+                            }
+                        break;
+                    }
+                    case'5':
+                    {
+                        System.out.println("Total calculation");
+                        int a[]=new int [30];
+                        String z;
+                        int m=0;
+                        try{
+                            FileReader fn=new FileReader(nm);
+                            FileReader fs=new FileReader(sm);
+                            FileReader fb=new FileReader(bm);
+                            FileReader ft=new FileReader(tm);
+                            
+                            BufferedReader bn=new BufferedReader(fn);
+                            BufferedReader bs=new BufferedReader(fs);
+                            BufferedReader bb=new BufferedReader(fb);
+                            BufferedReader bt=new BufferedReader(ft);
+                            
+                            System.out.print(abc1+" Market   =");
+                            for (int i = 0; i < a.length ; i++) {
+                                z=bn.readLine();
+                                System.out.print(z+", ");
+                                m=m+Integer.parseInt(z);
+                            }
+                            
+                            System.out.print("\n"+abc2+ "Market  =");
+                            for (int i = 0; i < a.length; i++) {
+                                z=bs.readLine();
+                                System.out.print(z+", ");
+                                m=m+Integer.parseInt(z);
+                            }
+                            System.out.print("\n"+abc3+" Market   =");
+                            for (int i = 0; i < a.length; i++) {
+                                z=bb.readLine();
+                                System.out.print(z+", ");
+                                m=m+Integer.parseInt(z);
+                            }
+                            System.out.print("\n"+abc4+" Market =");
+                            for (int i = 0; i <a.length; i++) {
+                                z=bt.readLine();
+                                System.out.print(z+", ");
+                                m=m+Integer.parseInt(z);
+                            }
+                            System.out.print("\n\n All Marketing ="+m+"\n\n");
+                            
+                            
+                                 //theory total submission-total market
+                                 
+                            double totalsubmission=0;
+                            try{
+                                FileReader f1=new FileReader(n);
+                                FileReader f2=new FileReader(s);
+                                FileReader f3=new FileReader(b);
+                                FileReader f4=new FileReader(t);
+                                BufferedReader b1=new BufferedReader(f1);
+                                BufferedReader b2=new BufferedReader(f2);
+                                BufferedReader b3=new BufferedReader(f3);
+                                BufferedReader b4=new BufferedReader(f4);
+                                for (int i = 0; i < 10; i++) {
+                                    totalsubmission=totalsubmission+Integer.parseInt(b1.readLine());
+                                }
+                                
+                                
+                                for (int i = 0; i < 10; i++) {
+                                    totalsubmission=totalsubmission+Integer.parseInt(b2.readLine());
+                                }
+                                
+                                
+                                for (int i = 0; i < 10; i++) {
+                                    totalsubmission=totalsubmission+Integer.parseInt(b3.readLine());
+                                }
+                                
+                                for (int i = 0; i < 10; i++) {
+                                    totalsubmission=totalsubmission+Integer.parseInt(b4.readLine());
+                                }
+                                
+                                }catch(IOException ex){}
+                            double money=totalsubmission-m;
+                            System.out.println("Total money submission ="+totalsubmission);
+                            System.out.println("\nBe on cash money = "+money+"\n");
+                            bn.close();
+                            bs.close();
+                            bb.close();
+                            bt.close();
+                        }catch(IOException ex){
+                             System.out.print(ex);
+                        }
+                        break;
+                    }
+                    default:{
+                        System.out.println("Invalid key press");
+                    }
+                }
+                break;
+            }
+            case'3':
+            {
+                
+                             //Total market / total mill = permil rate
+                             
+                int totalmarket=0;
+                double alltotalmarket=0;
+                try{
+                    FileReader f1=new FileReader(nm);
+                    FileReader f2=new FileReader(sm);
+                    FileReader f3=new FileReader(bm);
+                    FileReader f4=new FileReader(tm);
+                    BufferedReader b1=new BufferedReader(f1);
+                    BufferedReader b2=new BufferedReader(f2);
+                    BufferedReader b3=new BufferedReader(f3);
+                    BufferedReader b4=new BufferedReader(f4);
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b1.readLine());
+                    }
+                    System.out.println(abc1+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    totalmarket=0;
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b2.readLine());
+                    }
+                    System.out.println(abc2+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    totalmarket=0;
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b3.readLine());
+                    }
+                    System.out.println(abc3+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    totalmarket=0;
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b4.readLine());
+                    }
+                    System.out.println(abc4+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    System.out.println("                                Full Marcket cost  ="+alltotalmarket);
+                    b1.close();
+                    b2.close();
+                    b3.close();
+                    b4.close();
+                }catch(IOException ex){}
+                System.out.print("\n\n                               First row is showing day's \n\n");
+                
+                
+                              //Day print;
+                int day[]=new int[31];              
+                try{
+                    FileReader f1=new FileReader(nmc);
+                    BufferedReader b1=new BufferedReader(f1);
+                    for (int i = 0; i < 31; i++) {
+                        day[i]=Integer.parseInt(b1.readLine());
+                    }
+                    b1.close();
+                }catch(IOException ex){}
+                for (int i = 0; i < 31; i++) {
+                    if(day[i]!=0){
+                        if(i==day.length-1){
+                                System.out.print((i+1));
+                        }else 
+                            if(i<9){
+                                System.out.print((i+1)+"   ");
+                            }else if(i>=9){
+                                System.out.print((i+1)+"  ");
+                            }
+                            
+                    }
+                }
+                System.out.print("\n");
+                
+                
+                
+                double totalmill=0;
+                int mill=0;
+                int []a=new int[31];
+                try{
+                    FileReader f1=new FileReader(nmc);
+                    FileReader f2=new FileReader(smc);
+                    FileReader f3=new FileReader(bmc);
+                    FileReader f4=new FileReader(tmc);
+                    BufferedReader b1=new BufferedReader(f1);
+                    BufferedReader b2=new BufferedReader(f2);
+                    BufferedReader b3=new BufferedReader(f3);
+                    BufferedReader b4=new BufferedReader(f4);
+                    
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b1.readLine());
+                    }
+                    print(a);
+                    mill=b(a);   //total mill counter
+                    a=aiz(a);    //for safty do a[]=0;
+                    System.out.println("  "+abc1+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    
+                    
+                    
+                    mill=0;
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b2.readLine());
+                    }
+                    print(a);
+                    mill=b(a);
+                    a=aiz(a);
+                    System.out.println("  "+abc2+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    
+                    
+                    
+                    mill=0;
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b3.readLine());
+                    }
+                    print(a);
+                    mill=b(a);
+                    a=aiz(a);
+                    System.out.println("  "+abc3+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    
+                    
+                    
+                    mill=0;
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b4.readLine());
+                    }
+                    print(a);
+                    mill=b(a);
+                    a=aiz(a);
+                    System.out.println("  "+abc4+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    
+                    b1.close();
+                    b2.close();
+                    b3.close();
+                    b4.close();
+                }catch(IOException ex){}
+                System.out.println("\nTotal mill ="+totalmill);
+                if(totalmill!=0){
+                    double milrate=alltotalmarket/totalmill;
+                    System.out.println("\n\n Mill rate is "+milrate+"\n\n");
+                }else
+                    System.out.println("Total mill is zero ----Tnx");
+                
+                break;
+            }
+            case'4':
+            {
+                                   //total Submission
+                System.out.println("      Submission   ");
+                int addmoney=0;
+                int totaladdmoney=0;
+                double s1=0,s2=0,s3=0,s4=0;
+                try{
+                    FileReader f1=new FileReader(n);
+                    FileReader f2=new FileReader(s);
+                    FileReader f3=new FileReader(b);
+                    FileReader f4=new FileReader(t);
+                    BufferedReader b1=new BufferedReader(f1);
+                    BufferedReader b2=new BufferedReader(f2);
+                    BufferedReader b3=new BufferedReader(f3);
+                    BufferedReader b4=new BufferedReader(f4);
+                    for (int i = 0; i < 10; i++) {
+                        addmoney=addmoney+Integer.parseInt(b1.readLine());
+                    }
+                    totaladdmoney=totaladdmoney+addmoney;
+                    System.out.print("\n "+abc1+" = "+addmoney);
+                    s1=addmoney;
+                    addmoney=0;
+                    
+                    
+                    for (int i = 0; i < 10; i++) {
+                        addmoney=addmoney+Integer.parseInt(b2.readLine());
+                    }
+                    totaladdmoney=totaladdmoney+addmoney;
+                    System.out.print("\n "+abc2+" = "+addmoney);
+                    s2=addmoney;
+                    addmoney=0;
+                    
+                    
+                    for (int i = 0; i < 10; i++) {
+                        addmoney=addmoney+Integer.parseInt(b3.readLine());
+                    }
+                    totaladdmoney=totaladdmoney+addmoney;
+                    System.out.print("\n "+abc3+" = "+addmoney);
+                    s3=addmoney;
+                    addmoney=0;
+                    
+                    for (int i = 0; i < 10; i++) {
+                        addmoney=addmoney+Integer.parseInt(b4.readLine());
+                    }
+                    totaladdmoney=totaladdmoney+addmoney;
+                    System.out.print("\n "+abc4+" = "+addmoney);
+                    s4=addmoney;
+                    System.out.print("\n                                Total submission ="+totaladdmoney+"\n");
+                    
+                    b1.close();
+                    b2.close();
+                    b3.close();
+                    b4.close();
+                    
+                }catch(IOException ex){}
+                                   //toal market
+                                   
+                int totalmarket=0;
+                int alltotalmarket=0;
+                try{
+                    FileReader f1=new FileReader(nm);
+                    FileReader f2=new FileReader(sm);
+                    FileReader f3=new FileReader(bm);
+                    FileReader f4=new FileReader(tm);
+                    BufferedReader b1=new BufferedReader(f1);
+                    BufferedReader b2=new BufferedReader(f2);
+                    BufferedReader b3=new BufferedReader(f3);
+                    BufferedReader b4=new BufferedReader(f4);
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b1.readLine());
+                    }
+                    System.out.println(abc1+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    totalmarket=0;
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b2.readLine());
+                    }
+                    System.out.println(abc2+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    totalmarket=0;
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b3.readLine());
+                    }
+                    System.out.println(abc3+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    totalmarket=0;
+                    for (int i = 0; i < 30 ; i++) {
+                        totalmarket=totalmarket+Integer.parseInt(b4.readLine());
+                    }
+                    System.out.println(abc4+" Total marcket =" +totalmarket);
+                    alltotalmarket=alltotalmarket+totalmarket;
+                    
+                    System.out.println("                                Full Marcket cost  ="+alltotalmarket);
+                    b1.close();
+                    b2.close();
+                    b3.close();
+                    b4.close();
+                }catch(IOException ex){}
+                                   //total mill
+                                   
+                int totalmill=0;
+                double n1=0,n2=0,n3=0,n4=0;
+                int mill=0;
+                float millrate=0;
+                int []a=new int[31];
+                try{
+                    FileReader f1=new FileReader(nmc);
+                    FileReader f2=new FileReader(smc);
+                    FileReader f3=new FileReader(bmc);
+                    FileReader f4=new FileReader(tmc);
+                    BufferedReader b1=new BufferedReader(f1);
+                    BufferedReader b2=new BufferedReader(f2);
+                    BufferedReader b3=new BufferedReader(f3);
+                    BufferedReader b4=new BufferedReader(f4);
+                    
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b1.readLine());
+                    }
+                    mill=b(a);   //
+                    a=aiz(a);    //for safty do a[]=0;
+                    System.out.println(abc1+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    n1=mill;
+                    
+                    
+                    mill=0;
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b2.readLine());
+                    }
+                    mill=b(a);
+                    a=aiz(a);
+                    System.out.println(abc2+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    n2=mill;
+                    
+                    
+                    mill=0;
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b3.readLine());
+                    }
+                    mill=b(a);
+                    a=aiz(a);
+                    System.out.println(abc3+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    n3=mill;
+                    
+                    
+                    mill=0;
+                    for (int i = 0; i < 31; i++) {
+                        a[i]=Integer.parseInt(b4.readLine());
+                    }
+                    mill=b(a);
+                    a=aiz(a);
+                    System.out.println(abc4+" total mill ="+mill);
+                    totalmill=totalmill+mill;
+                    n4=mill;
+                    System.out.print("                                Total mill ="+totalmill+"\n");
+                    b1.close();
+                    b2.close();
+                    b3.close();
+                    b4.close();
+                }catch(IOException ex){}
+                float aa=alltotalmarket;
+                float bb=totalmill;
+                millrate=aa/bb;
+                System.out.print("                                per mil    ="+millrate+"\n");
+                
+                                   //per mill
+                double z1,z2,z3,z4;
+                z1=n1*millrate;
+                System.out.println("\n"+abc1+" total mill cost = "+z1+"");
+                z2=n2*millrate;
+                System.out.println(abc2+" total mill cost = "+z2+"");
+                z3=n3*millrate;
+                System.out.println(abc3+" total mill cost = "+z3+"");
+                z4=n4*millrate;
+                System.out.println(abc4+" total mill cost = "+z4+"");
+                                   //give--/--got submission
+                s1=s1-z1;
+                double z=0;
+                if(s1>0){
+                System.out.print("\n                 "+abc1+" got "+s1);
+                }else {
+                    z=s1*-1;
+                    System.out.print("                   "+abc1+" give "+z);
+                }
+                
+                
+                
+                s2=s2-z2;
+                if(s2>0){
+                System.out.print("                       "+abc2+" got "+s2);
+                }else{
+                    z=s2*-1;
+                    System.out.print("                       "+abc2+" give "+z+"");
+                }
+                
+                
+                
+                s3=s3-z3;
+                if(s3>0){
+                System.out.print("                     "+abc3+" got "+s3+"");
+                }else {
+                    z=s3*-1;
+                    System.out.print("                    "+abc3+" give "+z+"");
+                }
+                
+                
+                
+                s4=s4-z4;
+                if(s4>0){
+                System.out.print("                     "+abc4+" got "+s4);
+                }else {
+                    z=s4*-1;
+                    System.out.print("                    "+abc4+" give "+z);
+                }
+                
+                
+                                   //current bill
+                System.out.println("\n\n Are you Want to add current bill(y/n)");
+                char chh=sc.next().charAt(0);
+                if(chh=='y'||ch=='Y'){
+                    double currentbill=sc.nextInt();
+                    System.out.println("Home charge 8000");
+                    System.out.println("gase bill  975");
+                    System.out.println("Net bil 500");
+                    System.out.println("Dirt bill  100");
+                    double perbill=(currentbill+8000+975+500+100)/4;
+                    System.out.println("So per bill ="+perbill);
+                    
+                    double t1=perbill-s1;
+                    double t2=perbill-s2;
+                    double t3=perbill-s3;
+                    double t4=perbill-s4;
+                    
+                    System.out.println(abc1+" give   "+t1);
+                    System.out.println(abc2+" give  "+t2);
+                    System.out.println(abc3+" give   "+t3);
+                    System.out.println(abc4+" give "+t4);
+                    
+                    
+                    
+                    
+                    
+                 
+                }else System.out.print("\n\nTnx");
+                                   //home bill
+                break;
+            }
+            case'5':
+            {                                           //this case we ignore 100 value
+                int a[]=new int[31];
+                int flg;
+                             
+                                                        //         numan's Mill
+                             
+                System.out.println(abc1+"'s Mill");
+                try{
+                    FileReader fr=new FileReader(nmc);
+                    BufferedReader br=new BufferedReader(fr);
+                    for (int i = 0; i <a.length ; i++) {
+                        a[i]=Integer.parseInt(br.readLine());
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                for (int i = 0; i < a.length; i++) {
+                    if(a[i]==0){
+                        System.out.print((i+1)+"th days mill  ");
+                        flg=sc.nextInt();
+                        if(flg==0){
+                            a[i]=100;
+                        }else 
+                            a[i]=flg;
+                        break;
+                    }
+                }
+                try{
+                    FileWriter fr=new FileWriter(nmc);
+                    BufferedWriter br=new BufferedWriter(fr);
+                    for (int i = 0; i < a.length; i++) {
+                        br.write(a[i]+"\n");
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                
+                
+                                                                    //Salmans mill
+                                                                    
+                for (int i = 0; i < a.length; i++) {
+                    a[i]=0;
+                }
+                System.out.println("\n"+abc2+"'s Mill");
+                try{
+                    FileReader fr=new FileReader(smc);
+                    BufferedReader br=new BufferedReader(fr);
+                    for (int i = 0; i <a.length ; i++) {
+                        a[i]=Integer.parseInt(br.readLine());
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                for (int i = 0; i < a.length; i++) {
+                    if(a[i]==0){
+                        System.out.print((i+1)+"th days mill  ");
+                        flg=sc.nextInt();
+                        if(flg==0){
+                            a[i]=100;
+                        }else
+                            a[i]=flg;
+                        break;
+                    }
+                }
+                try{
+                    FileWriter fr=new FileWriter(smc);
+                    BufferedWriter br=new BufferedWriter(fr);
+                    for (int i = 0; i < a.length; i++) {
+                        br.write(a[i]+"\n");
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                
+                                                            //Sunny's Mill
+                 
+                for (int i = 0; i < a.length; i++) {
+                    a[i]=0;
+                }
+                System.out.println("\n"+abc3+"'s Mill");
+                try{
+                    FileReader fr=new FileReader(bmc);
+                    BufferedReader br=new BufferedReader(fr);
+                    for (int i = 0; i <a.length ; i++) {
+                        a[i]=Integer.parseInt(br.readLine());
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                for (int i = 0; i < a.length; i++) {
+                    if(a[i]==0){
+                        System.out.print((i+1)+"th days mill  ");
+                        flg=sc.nextInt();
+                        if(flg==0){
+                            a[i]=100;
+                        }else
+                            a[i]=flg;
+                        break;
+                    }
+                }
+                try{
+                    FileWriter fr=new FileWriter(bmc);
+                    BufferedWriter br=new BufferedWriter(fr);
+                    for (int i = 0; i < a.length; i++) {
+                        br.write(a[i]+"\n");
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                
+                
+                                                            //Tofayel
+                
+                for (int i = 0; i < a.length; i++) {
+                    a[i]=0;
+                }
+                System.out.println("\n"+abc4+"'s Mill");
+                try{
+                    FileReader fr=new FileReader(tmc);
+                    BufferedReader br=new BufferedReader(fr);
+                    for (int i = 0; i <a.length ; i++) {
+                        a[i]=Integer.parseInt(br.readLine());
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                for (int i = 0; i < a.length; i++) {
+                    if(a[i]==0){
+                        System.out.print((i+1)+"th days mill  ");
+                        flg=sc.nextInt();
+                        if(flg==0){
+                            a[i]=100;
+                        }else
+                            a[i]=flg;
+                        break;
+                    }
+                }
+                try{
+                    FileWriter fr=new FileWriter(tmc);
+                    BufferedWriter br=new BufferedWriter(fr);
+                    for (int i = 0; i < a.length; i++) {
+                        br.write(a[i]+"\n");
+                    }
+                    br.close();
+                }catch(IOException ex){}
+                break;
+            }
+            case'6':             //  Reset all area
+            {
+                System.out.println("Please Enter password");
+                char p=sc.next().charAt(0);
+                char ps=sc.next().charAt(0);
+                if(p=='n' && ps=='!'){
+                    System.out.println("Reseting");
+                    try{
+                                 //Add money
+                        FileWriter n1=new FileWriter(n);
+                        FileWriter n2=new FileWriter(s);
+                        FileWriter n3=new FileWriter(b);
+                        FileWriter n4=new FileWriter(t);
+                                  //Marcket
+                        FileWriter n5=new FileWriter(nm);
+                        FileWriter n6=new FileWriter(sm);
+                        FileWriter n7=new FileWriter(bm);
+                        FileWriter n8=new FileWriter(tm);
+                                  //mil count
+                        FileWriter n9=new FileWriter(nmc);
+                        FileWriter n10=new FileWriter(smc);
+                        FileWriter n11=new FileWriter(bmc);
+                        FileWriter n12=new FileWriter(tmc);
+                        
+                        
+                        BufferedWriter b1=new BufferedWriter(n1);
+                        BufferedWriter b2=new BufferedWriter(n2);
+                        BufferedWriter b3=new BufferedWriter(n3);
+                        BufferedWriter b4=new BufferedWriter(n4);
+                        BufferedWriter b5=new BufferedWriter(n5);
+                        BufferedWriter b6=new BufferedWriter(n6);
+                        BufferedWriter b7=new BufferedWriter(n7);
+                        BufferedWriter b8=new BufferedWriter(n8);
+                        BufferedWriter b9=new BufferedWriter(n9);
+                        BufferedWriter b10=new BufferedWriter(n10);
+                        BufferedWriter b11=new BufferedWriter(n11);
+                        BufferedWriter b12=new BufferedWriter(n12);
+                        for (int i = 0; i < 10; i++) {
+                            b1.write(0+"\n");
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            b2.write(0+"\n");
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            b3.write(0+"\n");
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            b4.write(0+"\n");
+                        }
+                        for (int i = 0; i < 30; i++) {
+                            b5.write(0+"\n");
+                        }
+                        for (int i = 0; i < 30; i++) {
+                            b6.write(0+"\n");
+                        }
+                        for (int i = 0; i < 30; i++) {
+                            b7.write(0+"\n");
+                        }
+                        for (int i = 0; i < 30; i++) {
+                            b8.write(0+"\n");
+                        }
+                        for (int i = 0; i < 31; i++) {
+                            b9.write(0+"\n");
+                        }
+                        for (int i = 0; i < 31; i++) {
+                            b10.write(0+"\n");
+                        }
+                        for (int i = 0; i < 31; i++) {
+                            b11.write(0+"\n");
+                        }
+                        for (int i = 0; i < 31; i++) {
+                            b12.write(0+"\n");
+                        }
+                        System.out.println("Reset complite");
+                        b1.close();
+                        b2.close();
+                        b3.close();
+                        b4.close();
+                        b5.close();
+                        b6.close();
+                        b7.close();
+                        b8.close();
+                        b9.close();
+                        b10.close();
+                        b11.close();
+                        b12.close();
+                    }catch(IOException ex){
+                        System.out.print(ex);
+                    }
+                    
+                }
+                else{
+                    System.out.println("Wrong key press");
+                }
+                break;
+            }
+            default:
+            {
+                System.out.println("Invalid key press");
+            }
+        }
+    }
+    
+}
